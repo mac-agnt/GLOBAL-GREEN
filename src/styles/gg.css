@@ -1,0 +1,33 @@
+/* Global Green accents on top of the Pulse themes.
+   Brand values are provisional demo approximations, not official brand codes:
+   primary green #168763, secondary blue #187EA2, accent lime #A9D75E. */
+:root{
+  --gg-green:#3fbf8f; --gg-blue:#4fb0d4; --gg-lime:#b6e070;
+  --gg-green-soft:rgba(63,191,143,.14); --gg-blue-soft:rgba(79,176,212,.14); --gg-lime-soft:rgba(182,224,112,.14);
+  --gg-ink:#17272B;
+}
+[data-theme="light"],[data-theme="mist"],[data-theme="sand"],[data-theme="warm"]{
+  --gg-green:#168763; --gg-blue:#187EA2; --gg-lime:#6f9a2c;
+  --gg-green-soft:rgba(22,135,99,.11); --gg-blue-soft:rgba(24,126,162,.11); --gg-lime-soft:rgba(111,154,44,.12);
+}
+/* Harbour (default) picks up the brand green as its accent. */
+[data-theme="harbour"]{
+  --accent:#45c992; --accent-hover:#62d6a5;
+  --accent-soft:rgba(69,201,146,.16); --accent-faint:rgba(69,201,146,.07); --accent-line:rgba(69,201,146,.32);
+  --accent-fill:linear-gradient(90deg,#2fae7e 0%,#8fd27a 100%); --accent-glow:0 0 24px rgba(63,191,143,.26);
+  --rail-active-ink:#5fd3a2; --kpi-up:#5fd3a2;
+  --bloom-a:rgba(63,191,143,.34); --bloom-b:rgba(24,126,162,.30); --bloom-c:rgba(169,215,94,.20);
+  --hero-grad:linear-gradient(180deg,#07100d 0%,#0a2419 22%,#0f3d2d 46%,#16775a 64%,#0f3a2c 84%,#0a0f0d 100%);
+}
+.gg-row{transition:background .16s var(--ease)}
+.gg-row:hover{background:var(--surface-2)}
+.gg-click{transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.gg-click:hover{border-color:var(--border-strong) !important;transform:translateY(-1px)}
+.gg-btn:hover:not(:disabled){border-color:var(--border-strong);filter:brightness(1.06)}
+.gg-btn:active:not(:disabled){transform:translateY(1px)}
+.gg-chip:hover{border-color:var(--accent-line) !important;color:var(--ink) !important}
+.gg-seg:hover{color:var(--ink) !important}
+.gg-card-link{transition:border-color .2s var(--ease)}
+.gg-card-link:hover{border-color:var(--border-strong) !important}
+@media (max-width: 900px){ .gg-grid{grid-template-columns:1fr !important} }
+@media (prefers-reduced-motion: reduce){ .gg-click:hover{transform:none} }
